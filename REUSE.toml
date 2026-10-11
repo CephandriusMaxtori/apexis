@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 Apexis Project contributors
+# SPDX-FileCopyrightText: 2026 Nolan Bragan
 #
 # REUSE metadata for the Apexis repository.
 #
@@ -22,14 +22,14 @@
 
 version = 1
 SPDX-PackageName = "apexis"
-SPDX-PackageSupplier = "Apexis Project contributors"
+SPDX-PackageSupplier = "Nolan Bragan"
 SPDX-PackageDownloadLocation = "https://github.com/CephandriusMaxtori/apexis"
 
 # Design system: tokens, generator, and all generated renderer output.
 [[annotations]]
 path = ["design/**"]
 precedence = "aggregate"
-SPDX-FileCopyrightText = "2026 Apexis Project contributors"
+SPDX-FileCopyrightText = "2026 Nolan Bragan"
 SPDX-License-Identifier = "MPL-2.0"
 
 # Everything else in the repository: installer, packaging, compositor config,
@@ -37,7 +37,7 @@ SPDX-License-Identifier = "MPL-2.0"
 [[annotations]]
 path = ["**"]
 precedence = "aggregate"
-SPDX-FileCopyrightText = "2026 Apexis Project contributors"
+SPDX-FileCopyrightText = "2026 Nolan Bragan"
 SPDX-License-Identifier = "GPL-2.0-or-later"
 
 # Files under LICENSES/ are the licence definitions themselves and need no

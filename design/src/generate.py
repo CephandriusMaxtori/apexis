@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# SPDX-FileCopyrightText: 2026 Apexis Project contributors
+# SPDX-FileCopyrightText: 2026 Nolan Bragan
 # SPDX-License-Identifier: MPL-2.0
 
 """Resolve the Apexis token graph and emit every renderer format.
