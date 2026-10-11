@@ -1,0 +1,55 @@
+# coreos-assembler / rpm-ostree manifest for Apexis.
+#
+# UNVERIFIED: no image has been composed. See build/README.md.
+# The `ref:` below is the value to confirm on the first build — it must point
+# at the published Fedora Plasma atomic desktop branch for the target release.
+#
+# Update `releasever` to track a Fedora N release. Per plan.md the cadence is
+# one ISO per Fedora release plus a rolling apexis-edge channel.
+
+releasever: 44
+
+# Base: the official Fedora Plasma atomic desktop. Curating an existing image
+# rather than assembling from scratch is a stated non-goal (plan.md §2) and is
+# what inherits hardware enablement and security updates.
+ref: fedora:fedora/44/x86_64/kinoite
+
+# Fedora trademark compliance (plan.md §3.1) — not optional.
+# fedora-logos carries the Fedora wordmark, boot splash and Anaconda branding.
+# The Fedora EULA requires replacing all images containing the Fedora
+# trademark in any modified distribution.
+exclude-packages:
+  - fedora-logos
+  - fedora-logos-boot
+  - fedora-logos-anaconda
+
+packages:
+  # Design system: Kvantum handles the Qt widget layer, radii and typography.
+  - kvantum
+  - kde-plasma-look-and-feel
+
+  # Plasma brings KWin's compositor effects, including the background blur the
+  # glass material depends on (design/tokens/apexis.json -> glass).
+  - kwin
+  - plasma-workspace
+
+  # Fonts. Geist itself is bundled into the image by overlay.d/30-fonts once
+  # the vendoring decision is made; these are the system UI fallbacks.
+  - fontconfig
+  - noto-sans-fonts
+  - noto-mono-fonts
+
+  # Flatpak is the only GUI app channel (plan.md §6). No second store.
+  - flatpak
+
+  # fwupd gives us LVFS firmware updates, which we then curate rather than
+  # passing through wholesale — see plan.md, NVIDIA and firmware policy.
+  - fwupd
+
+  # Secure Boot. Day-one hardware requires it (plan.md §1).
+  - shim-x64
+  - grub2-efi-x64
+
+  # Toolbox is how developers get a mutable environment on an immutable host.
+  # For this audience it is not optional.
+  - toolbox

@@ -9,6 +9,13 @@
 # COSA overrides (local build artifacts)
 /overrides/
 
+# coreos-assembler work directory (build/build.sh)
+/.build/
+
+# Design tokens staged into the image overlay by build/build.sh.
+# Source of truth is design/dist/ -- never edit the staged copies.
+/build/overlay.d/30-apexis/
+
 # VM images
 *.img
 *.vmdk

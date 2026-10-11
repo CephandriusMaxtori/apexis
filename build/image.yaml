@@ -1,0 +1,34 @@
+# coreos-assembler image output configuration.
+#
+# UNVERIFIED: no image composed yet. The `ostree:` key set accepted here is
+# the thing most likely to need correction on the first build — see
+# build/README.md.
+
+size: 8
+
+ostree:
+  # Identity. Apexis is not a Fedora Spin; these replace the Fedora values
+  # carried in by the base image.
+  osname: Apexis
+  osid: apexis
+  version: 0.1.0
+
+  # Native bootable-container image, matching what Fedora's own atomic desktops
+  # publish. This is what `rpm-ostree upgrade` consumes at runtime.
+  bootable: true
+
+  # No SELinux weakening — the base is enforcing and we inherit it.
+  selinux: true
+
+# Kernel command line. Deliberately minimal: every added flag is a promise to
+# keep it compatible with all day-one hardware.
+extra-kargs:
+  - rd.luks.name=luks-*
+  - rd.luks.options=discard
+  - console=tty0
+
+# Quiet boot. Design Doc §2 asks for a flicker-free, quiet boot with a splash.
+# The splash itself is branded in overlay.d/00-branding.
+extra-bootflags:
+  - plymouth.enable-timeouts=3
+  - plymouth.ignore-serial-consoles
