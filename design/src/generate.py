@@ -32,6 +32,17 @@ DIST = ROOT / "dist"
 COMMENT_KEYS = {"$comment"}
 
 
+def write(path: Path, text: str) -> None:
+    """Write UTF-8 text with LF endings, on every platform.
+
+    Python's text mode translates \n to os.linesep, which on Windows would emit
+    CRLF and make generated output differ by platform. CI validates on
+    ubuntu-latest while development happens on Windows, so the committed
+    artifacts must not depend on which one produced them.
+    """
+    path.write_text(text, encoding="utf-8", newline="\n")
+
+
 # ---------------------------------------------------------------------------
 # Resolution
 # ---------------------------------------------------------------------------
@@ -475,27 +486,23 @@ def main() -> int:
         return 0
 
     DIST.mkdir(parents=True, exist_ok=True)
-    (DIST / "apexis.css").write_text(emit_css(tokens, resolver), encoding="utf-8")
+    write(DIST / "apexis.css", emit_css(tokens, resolver))
     for theme in ("light", "dark"):
-        (DIST / f"apexis-{theme}.colors").write_text(
-            emit_kcfg(tokens, resolver, theme), encoding="utf-8"
-        )
+        write(DIST / f"apexis-{theme}.colors", emit_kcfg(tokens, resolver, theme))
 
     kv = DIST / "apexis-kvantum"
     kv.mkdir(exist_ok=True)
-    (kv / "apexis-kvantum.config").write_text(emit_kvantum(tokens, resolver), encoding="utf-8")
+    write(kv / "apexis-kvantum.config", emit_kvantum(tokens, resolver))
 
     qml = DIST / "apexis-qml"
     qml.mkdir(exist_ok=True)
     body, qmldir = emit_qml(tokens, resolver)
-    (qml / "Tokens.qml").write_text(body, encoding="utf-8")
-    (qml / "qmldir").write_text(qmldir, encoding="utf-8")
+    write(qml / "Tokens.qml", body)
+    write(qml / "qmldir", qmldir)
 
-    (DIST / "apexis.tokens.json").write_text(
-        json.dumps(emit_tokens_json(tokens, resolver), indent=2) + "\n", encoding="utf-8"
-    )
-    (DIST / "palette.md").write_text(emit_markdown(tokens, resolver), encoding="utf-8")
-    (DIST / "README.md").write_text(emit_dist_readme(), encoding="utf-8")
+    write(DIST / "apexis.tokens.json", json.dumps(emit_tokens_json(tokens, resolver), indent=2) + "\n")
+    write(DIST / "palette.md", emit_markdown(tokens, resolver))
+    write(DIST / "README.md", emit_dist_readme())
 
     print(f"Wrote {len(list(DIST.rglob('*')))} entries to {DIST.relative_to(ROOT.parent)}")
     return 0

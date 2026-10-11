@@ -1,0 +1,23 @@
+# Line endings.
+#
+# This repository is developed on Windows and built on Linux. Without an
+# explicit rule, behaviour depends on each machine's core.autocrlf, and copying
+# a Windows working tree into WSL produces spurious diffs that look like real
+# changes. Normalise to LF everywhere: in the repository, and in the working
+# tree on every platform.
+* text=auto eol=lf
+
+# Licence texts are reproduced verbatim from SPDX. Do not let anything rewrite
+# their line endings -- they are byte-sensitive in a legal sense.
+LICENSES/*.txt -text
+
+# Build artefacts and binaries.
+*.png  binary
+*.jpg  binary
+*.svg  text eol=lf
+*.ttf  binary
+*.woff binary
+*.woff2 binary
+*.qcow2 binary
+*.iso  binary
+*.raw.xz binary
