@@ -23,7 +23,7 @@
 version = 1
 SPDX-PackageName = "apexis"
 SPDX-PackageSupplier = "Nolan Bragan"
-SPDX-PackageDownloadLocation = "https://github.com/CephandriusMaxtori/apexis"
+SPDX-PackageDownloadLocation = "https://github.com/ngbcoder/apexis"
 
 # Design system: tokens, generator, and all generated renderer output.
 [[annotations]]
