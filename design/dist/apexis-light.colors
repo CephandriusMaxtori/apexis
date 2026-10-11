@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
+  <kcfgfile name=""/>
+  <group name="">
+    <entry name="Colors" type="Color">
+      <label>Apexis light colour scheme</label>
+      <defaults>
+        <color name="Background" rgb="#eff0f1"/>
+        <color name="BackgroundAlternate" rgb="#f7f7f8"/>
+        <color name="BackgroundFaint" rgb="#e0e2e5"/>
+        <color name="Foreground" rgb="#3c3d40"/>
+        <color name="ForegroundAlternate" rgb="#585b62"/>
+        <color name="ForegroundFaint" rgb="#696c72"/>
+        <color name="Decoration" rgb="#cdcfd4"/>
+        <color name="DecorationHover" rgb="#3f5ac0"/>
+        <color name="DecorationFocus" rgb="#6e90ff"/>
+        <color name="DecorationText" rgb="#3c3d40"/>
+        <color name="SelectionBackground" rgb="#2c3fe0"/>
+        <color name="SelectionForeground" rgb="#ffffff"/>
+        <color name="SelectionDecoration" rgb="#2c3fe0"/>
+        <color name="PlaceholderText" rgb="#696c72"/>
+        <color name="ButtonBackground" rgb="#f7f7f8"/>
+        <color name="ButtonForeground" rgb="#3c3d40"/>
+        <color name="ButtonHover" rgb="#cdcfd4"/>
+        <color name="ButtonDecoration" rgb="#2c3fe0"/>
+        <color name="ButtonText" rgb="#3c3d40"/>
+        <color name="ViewBackground" rgb="#f7f7f8"/>
+        <color name="ViewForeground" rgb="#3c3d40"/>
+        <color name="ViewDecoration" rgb="#e0e2e5"/>
+        <color name="FieldBackground" rgb="#e0e2e5"/>
+        <color name="FieldForeground" rgb="#3c3d40"/>
+        <color name="FieldPlaceholderText" rgb="#696c72"/>
+        <color name="WindowBackground" rgb="#f7f7f8"/>
+        <color name="WindowForeground" rgb="#3c3d40"/>
+        <color name="WindowDecoration" rgb="#cdcfd4"/>
+        <color name="LinkColor" rgb="#2c3fe0"/>
+        <color name="VisitedLink" rgb="#d6e2ff"/>
+        <color name="Positive" rgb="#389152"/>
+        <color name="Negative" rgb="#c94f4b"/>
+        <color name="Neutral" rgb="#a77000"/>
+        <color name="Warning" rgb="#a77000"/>
+        <color name="PlaceholderBackground" rgb="#e0e2e5"/>
+      </defaults>
+    </entry>
+  </group>
+</kcfg>

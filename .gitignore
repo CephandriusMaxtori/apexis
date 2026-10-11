@@ -29,3 +29,7 @@ Thumbs.db
 *.swp
 .idea/
 .vscode/
+
+# Python bytecode (design token generator)
+__pycache__/
+*.py[cod]

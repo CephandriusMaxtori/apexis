@@ -1,0 +1,33 @@
+name: Design tokens
+
+on:
+  push:
+    paths:
+      - 'design/**'
+      - '.github/workflows/tokens.yml'
+  pull_request:
+    paths:
+      - 'design/**'
+      - '.github/workflows/tokens.yml'
+
+jobs:
+  tokens:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Validate design tokens
+        run: python design/src/generate.py --check
+
+      - name: Verify committed output matches token source
+        run: |
+          python design/src/generate.py
+          if ! git diff --quiet -- design/dist; then
+            echo "::error::design/dist is stale — run 'python design/src/generate.py' and commit the result"
+            git --no-pager diff --stat -- design/dist
+            exit 1
+          fi

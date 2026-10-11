@@ -1,0 +1,393 @@
+{
+  "name": "Apexis",
+  "version": "0.1.0",
+  "generatedFrom": "design/tokens/apexis.json",
+  "families": {
+    "indigo": {
+      "50": "#f4f7ff",
+      "100": "#eaf0ff",
+      "200": "#d6e2ff",
+      "300": "#bbceff",
+      "400": "#97b3ff",
+      "500": "#6e90ff",
+      "600": "#4c6ef3",
+      "700": "#3f5ac0",
+      "800": "#344990",
+      "900": "#2b3a68",
+      "950": "#1b2339"
+    },
+    "periwinkle": {
+      "50": "#f5f8fc",
+      "100": "#ebf0f8",
+      "200": "#d8e3f2",
+      "300": "#c0d0e9",
+      "400": "#a0b7db",
+      "500": "#7c9ac7",
+      "600": "#637ea6",
+      "700": "#516685",
+      "800": "#415066",
+      "900": "#343d4c",
+      "950": "#1f242b"
+    },
+    "teal": {
+      "50": "#f2f9f9",
+      "100": "#e5f3f3",
+      "200": "#cce9e8",
+      "300": "#aadad9",
+      "400": "#7dc5c4",
+      "500": "#42abab",
+      "600": "#2c8d8d",
+      "700": "#297171",
+      "800": "#295858",
+      "900": "#254343",
+      "950": "#192727"
+    },
+    "pink": {
+      "50": "#fcf5f8",
+      "100": "#faebf1",
+      "200": "#f5d9e5",
+      "300": "#edc0d4",
+      "400": "#dfa0bd",
+      "500": "#cb7ba2",
+      "600": "#a96285",
+      "700": "#88516b",
+      "800": "#684254",
+      "900": "#4e3440",
+      "950": "#2c1f25"
+    },
+    "slate": {
+      "50": "#f7f7f8",
+      "100": "#eff0f1",
+      "200": "#e0e2e5",
+      "300": "#cdcfd4",
+      "400": "#b3b6bd",
+      "500": "#9598a2",
+      "600": "#797d85",
+      "700": "#62656b",
+      "800": "#4d4f54",
+      "900": "#3c3d40",
+      "950": "#232425"
+    },
+    "red": {
+      "50": "#fff5f4",
+      "100": "#ffeae8",
+      "200": "#ffd7d3",
+      "300": "#ffbbb5",
+      "400": "#fe948c",
+      "500": "#ef6761",
+      "600": "#c94f4b",
+      "700": "#a0423e",
+      "800": "#7a3935",
+      "900": "#5a2e2b",
+      "950": "#331d1b"
+    },
+    "amber": {
+      "50": "#fcf6ef",
+      "100": "#faeedf",
+      "200": "#f5debf",
+      "300": "#edc896",
+      "400": "#e0ab5d",
+      "500": "#cb8900",
+      "600": "#a77000",
+      "700": "#885a00",
+      "800": "#694812",
+      "900": "#4e3817",
+      "950": "#2c2213"
+    },
+    "green": {
+      "50": "#f2faf3",
+      "100": "#e6f4e8",
+      "200": "#ceebd3",
+      "300": "#aeddb6",
+      "400": "#83c992",
+      "500": "#4eb069",
+      "600": "#389152",
+      "700": "#327544",
+      "800": "#2e5b39",
+      "900": "#27452e",
+      "950": "#1a281d"
+    }
+  },
+  "palette": {
+    "light": {
+      "bg-canvas": "#eff0f1",
+      "bg-surface": "#f7f7f8",
+      "bg-raised": "#f7f7f8",
+      "bg-overlay": "#f7f7f8",
+      "bg-sunken": "#e0e2e5",
+      "bg-glass": "rgba(255, 255, 255, 0.55)",
+      "bg-glass-strong": "rgba(255, 255, 255, 0.72)",
+      "fg-default": "#3c3d40",
+      "fg-muted": "#585b62",
+      "fg-subtle": "#696c72",
+      "fg-on-accent": "#ffffff",
+      "border-subtle": "#e0e2e5",
+      "border-default": "#cdcfd4",
+      "border-strong": "#b3b6bd",
+      "border-glass-edge": "rgba(255, 255, 255, 0.9)",
+      "accent-default": "#2c3fe0",
+      "accent-hover": "#3f5ac0",
+      "accent-active": "#344990",
+      "accent-subtle": "#ebf0f8",
+      "accent-muted": "#d6e2ff",
+      "success": "#389152",
+      "warning": "#a77000",
+      "destructive": "#c94f4b",
+      "destructive-hover": "#a0423e",
+      "selection": "#eaf0ff",
+      "focus-ring": "#6e90ff"
+    },
+    "dark": {
+      "bg-canvas": "#232425",
+      "bg-surface": "#3c3d40",
+      "bg-raised": "#4d4f54",
+      "bg-overlay": "#4d4f54",
+      "bg-sunken": "#232425",
+      "bg-glass": "rgba(18, 20, 28, 0.55)",
+      "bg-glass-strong": "rgba(18, 20, 28, 0.72)",
+      "fg-default": "#eff0f1",
+      "fg-muted": "#b3b6bd",
+      "fg-subtle": "#9598a2",
+      "fg-on-accent": "#232425",
+      "border-subtle": "#4d4f54",
+      "border-default": "#62656b",
+      "border-strong": "#797d85",
+      "border-glass-edge": "rgba(255, 255, 255, 0.14)",
+      "accent-default": "#a3afff",
+      "accent-hover": "#c0d0e9",
+      "accent-active": "#d8e3f2",
+      "accent-subtle": "#1b2339",
+      "accent-muted": "#344990",
+      "success": "#83c992",
+      "warning": "#e0ab5d",
+      "destructive": "#fe948c",
+      "destructive-hover": "#ffbbb5",
+      "selection": "#2b3a68",
+      "focus-ring": "#a0b7db"
+    }
+  },
+  "typography": {
+    "$comment": "Geist (SIL OFL 1.1, no Reserved Font Name \u2014 see plan.md \u00a73.1). Scale is a 1.200 minor third; tracking tightens as size grows, which is what keeps large text from looking loose.",
+    "sans": "Geist",
+    "mono": "Geist Mono",
+    "fallbackSans": "Inter, Cantarell, Noto Sans, system-ui, sans-serif",
+    "fallbackMono": "ui-monospace, Cascadia Code, JetBrains Mono, monospace",
+    "scale": {
+      "display-lg": {
+        "size": 40,
+        "line": 48,
+        "weight": 620,
+        "tracking": -0.022
+      },
+      "display-md": {
+        "size": 32,
+        "line": 40,
+        "weight": 620,
+        "tracking": -0.018
+      },
+      "title-lg": {
+        "size": 24,
+        "line": 32,
+        "weight": 600,
+        "tracking": -0.014
+      },
+      "title-md": {
+        "size": 20,
+        "line": 28,
+        "weight": 600,
+        "tracking": -0.012
+      },
+      "title-sm": {
+        "size": 16,
+        "line": 24,
+        "weight": 600,
+        "tracking": -0.008
+      },
+      "body-lg": {
+        "size": 16,
+        "line": 26,
+        "weight": 400,
+        "tracking": 0
+      },
+      "body-md": {
+        "size": 14,
+        "line": 21,
+        "weight": 400,
+        "tracking": 0
+      },
+      "body-sm": {
+        "size": 13,
+        "line": 19,
+        "weight": 400,
+        "tracking": 0
+      },
+      "label-lg": {
+        "size": 15,
+        "line": 20,
+        "weight": 500,
+        "tracking": 0.002
+      },
+      "label-md": {
+        "size": 13,
+        "line": 17,
+        "weight": 500,
+        "tracking": 0.01
+      },
+      "label-sm": {
+        "size": 11,
+        "line": 14,
+        "weight": 600,
+        "tracking": 0.04
+      },
+      "mono-md": {
+        "size": 13,
+        "line": 21,
+        "weight": 400,
+        "tracking": 0,
+        "mono": true
+      },
+      "mono-lg": {
+        "size": 15,
+        "line": 24,
+        "weight": 400,
+        "tracking": 0,
+        "mono": true
+      }
+    }
+  },
+  "space": {
+    "$comment": "4px base grid. Nothing in the system should introduce a value that is not a multiple of 4.",
+    "none": 0,
+    "2xs": 2,
+    "xs": 4,
+    "sm": 8,
+    "md": 12,
+    "lg": 16,
+    "xl": 20,
+    "2xl": 24,
+    "3xl": 32,
+    "4xl": 40,
+    "5xl": 48,
+    "6xl": 64,
+    "7xl": 80,
+    "8xl": 96
+  },
+  "radii": {
+    "$comment": "\u00a77.1 specifies ~34px on panels. That is the signature value \u2014 everything else scales down from it.",
+    "none": 0,
+    "xs": 6,
+    "sm": 10,
+    "md": 14,
+    "lg": 20,
+    "xl": 28,
+    "panel": 34,
+    "pill": 999
+  },
+  "motion": {
+    "$comment": "Two families: `quick` for anything under the user's finger, `standard`/`emphasized` for things that move on their own. The spring curve is reserved for the glass material \u2014 it gives panels a small settle instead of a hard stop.",
+    "curve": {
+      "linear": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quick-out": [
+        0.22,
+        1,
+        0.36,
+        1
+      ],
+      "standard": [
+        0.2,
+        0,
+        0,
+        1
+      ],
+      "emphasized": [
+        0.3,
+        0,
+        0,
+        1
+      ],
+      "spring": [
+        0.34,
+        1.4,
+        0.64,
+        1
+      ]
+    },
+    "duration": {
+      "instant": 0,
+      "quick": 120,
+      "standard": 200,
+      "emphasized": 300,
+      "slow": 420,
+      "deliberate": 600
+    }
+  },
+  "glass": {
+    "$comment": "\u00a77.1: 'Translucent panels with heavy background blur, boosted saturation, bright inner top edges and large rounded corners.' This is the one material in the system, so it is specified once and referenced by every surface that uses it. blur and saturation are compositor values (KWin / wlr-layer-shell), saturation is a CSS-style multiplier.",
+    "blur": 40,
+    "saturation": 1.8,
+    "variants": {
+      "panel": {
+        "blur": 40,
+        "radius": 34,
+        "edgeWidth": 1,
+        "edgeOpacity": 0.9
+      },
+      "dock": {
+        "blur": 32,
+        "radius": 34,
+        "edgeWidth": 1,
+        "edgeOpacity": 0.85
+      },
+      "launcher": {
+        "blur": 44,
+        "radius": 34,
+        "edgeWidth": 1,
+        "edgeOpacity": 0.95
+      },
+      "popover": {
+        "blur": 28,
+        "radius": 20,
+        "edgeWidth": 1,
+        "edgeOpacity": 0.7
+      },
+      "status-pill": {
+        "blur": 24,
+        "radius": 999,
+        "edgeWidth": 1,
+        "edgeOpacity": 0.6
+      }
+    }
+  },
+  "elevation": {
+    "$comment": "Shadows are the fallback for surfaces that cannot blur (reduced transparency, or a compositor that refuses). Kept subtle on purpose \u2014 the material, not the shadow, should read.",
+    "level1": {
+      "y": 1,
+      "blur": 2,
+      "spread": 0,
+      "opacity": 0.06
+    },
+    "level2": {
+      "y": 4,
+      "blur": 12,
+      "spread": -2,
+      "opacity": 0.1
+    },
+    "level3": {
+      "y": 12,
+      "blur": 32,
+      "spread": -4,
+      "opacity": 0.14
+    },
+    "level4": {
+      "y": 24,
+      "blur": 56,
+      "spread": -8,
+      "opacity": 0.18
+    }
+  }
+}

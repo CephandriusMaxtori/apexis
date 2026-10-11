@@ -1,0 +1,224 @@
+{
+  "$comment": "Canonical Apexis design tokens. Renderer-agnostic: Plasma, Kvantum, the future shell, the installer and first-party apps all read from here. Edit this file, never dist/. Run `python design/src/generate.py` to rebuild dist/.",
+  "name": "Apexis",
+  "version": "0.1.0",
+  "specRef": "Design Doc v0.1 §7.1",
+
+  "families": {
+    "$comment": "Seeded from the §7.1 palette: misty periwinkle-to-teal wallpaper with soft pink and teal glows, indigo accent. Chroma values are deliberately restrained — the wallpaper supplies the colour, the UI supplies the restraint.",
+    "indigo": {
+      "hue": 268.6,
+      "chroma": 0.22,
+      "source": "#2c3fe0",
+      "role": "accent"
+    },
+    "periwinkle": {
+      "hue": 258.0,
+      "chroma": 0.075,
+      "role": "wallpaper family, quiet accent in dark theme"
+    },
+    "teal": {
+      "hue": 195.0,
+      "chroma": 0.095,
+      "role": "wallpaper glow, positive"
+    },
+    "pink": {
+      "hue": 350.0,
+      "chroma": 0.11,
+      "role": "wallpaper glow, highlight"
+    },
+    "slate": {
+      "hue": 268.0,
+      "chroma": 0.014,
+      "role": "cool neutral — all surfaces and text"
+    },
+    "red": { "hue": 25.0, "chroma": 0.17, "role": "destructive" },
+    "amber": { "hue": 75.0, "chroma": 0.15, "role": "warning" },
+    "green": { "hue": 150.0, "chroma": 0.14, "role": "success" }
+  },
+
+  "palette": {
+    "$comment": "Semantic colour. Never reference a raw family step from a component — reference these, so light and dark stay in step. `ref` points at family ramp; `hex` pins an exact value from the design doc; `alpha` composes over a base.",
+    "light": {
+      "bg-canvas": { "ref": "slate.100" },
+      "bg-surface": { "ref": "slate.50" },
+      "bg-raised": { "ref": "slate.50" },
+      "bg-overlay": { "ref": "slate.50" },
+      "bg-sunken": { "ref": "slate.200" },
+      "bg-glass": { "hex": "#ffffff", "alpha": 0.55 },
+      "bg-glass-strong": { "hex": "#ffffff", "alpha": 0.72 },
+
+      "fg-default": { "ref": "slate.900" },
+      "fg-muted": { "oklch": [0.470, 0.013, 268], "$why": "5.96:1 on canvas" },
+      "fg-subtle": { "oklch": [0.530, 0.011, 268], "$why": "4.61:1 on canvas — placeholder text is content and must clear AA" },
+      "fg-on-accent": { "hex": "#ffffff" },
+
+      "border-subtle": { "ref": "slate.200" },
+      "border-default": { "ref": "slate.300" },
+      "border-strong": { "ref": "slate.400" },
+      "border-glass-edge": { "hex": "#ffffff", "alpha": 0.9 },
+
+      "accent-default": { "hex": "#2c3fe0" },
+      "accent-hover": { "ref": "indigo.700" },
+      "accent-active": { "ref": "indigo.800" },
+      "accent-subtle": { "ref": "periwinkle.100" },
+      "accent-muted": { "ref": "indigo.200" },
+
+      "success": { "ref": "green.600" },
+      "warning": { "ref": "amber.600" },
+      "destructive": { "ref": "red.600" },
+      "destructive-hover": { "ref": "red.700" },
+
+      "selection": { "ref": "indigo.100" },
+      "focus-ring": { "ref": "indigo.500" }
+    },
+
+    "dark": {
+      "bg-canvas": { "ref": "slate.950" },
+      "bg-surface": { "ref": "slate.900" },
+      "bg-raised": { "ref": "slate.800" },
+      "bg-overlay": { "ref": "slate.800" },
+      "bg-sunken": { "ref": "slate.950" },
+      "bg-glass": { "hex": "#12141c", "alpha": 0.55 },
+      "bg-glass-strong": { "hex": "#12141c", "alpha": 0.72 },
+
+      "fg-default": { "ref": "slate.100" },
+      "fg-muted": { "ref": "slate.400" },
+      "fg-subtle": { "ref": "slate.500" },
+      "fg-on-accent": { "ref": "slate.950" },
+
+      "border-subtle": { "ref": "slate.800" },
+      "border-default": { "ref": "slate.700" },
+      "border-strong": { "ref": "slate.600" },
+      "border-glass-edge": { "hex": "#ffffff", "alpha": 0.14 },
+
+      "accent-default": { "hex": "#a3afff" },
+      "accent-hover": { "ref": "periwinkle.300" },
+      "accent-active": { "ref": "periwinkle.200" },
+      "accent-subtle": { "ref": "indigo.950" },
+      "accent-muted": { "ref": "indigo.800" },
+
+      "success": { "ref": "green.400" },
+      "warning": { "ref": "amber.400" },
+      "destructive": { "ref": "red.400" },
+      "destructive-hover": { "ref": "red.300" },
+
+      "selection": { "ref": "indigo.900" },
+      "focus-ring": { "ref": "periwinkle.400" }
+    }
+  },
+
+  "typography": {
+    "$comment": "Geist (SIL OFL 1.1, no Reserved Font Name — see plan.md §3.1). Scale is a 1.200 minor third; tracking tightens as size grows, which is what keeps large text from looking loose.",
+    "sans": "Geist",
+    "mono": "Geist Mono",
+    "fallbackSans": "Inter, Cantarell, Noto Sans, system-ui, sans-serif",
+    "fallbackMono": "ui-monospace, Cascadia Code, JetBrains Mono, monospace",
+
+    "scale": {
+      "display-lg": { "size": 40, "line": 48, "weight": 620, "tracking": -0.022 },
+      "display-md": { "size": 32, "line": 40, "weight": 620, "tracking": -0.018 },
+      "title-lg": { "size": 24, "line": 32, "weight": 600, "tracking": -0.014 },
+      "title-md": { "size": 20, "line": 28, "weight": 600, "tracking": -0.012 },
+      "title-sm": { "size": 16, "line": 24, "weight": 600, "tracking": -0.008 },
+      "body-lg": { "size": 16, "line": 26, "weight": 400, "tracking": 0 },
+      "body-md": { "size": 14, "line": 21, "weight": 400, "tracking": 0 },
+      "body-sm": { "size": 13, "line": 19, "weight": 400, "tracking": 0 },
+      "label-lg": { "size": 15, "line": 20, "weight": 500, "tracking": 0.002 },
+      "label-md": { "size": 13, "line": 17, "weight": 500, "tracking": 0.01 },
+      "label-sm": { "size": 11, "line": 14, "weight": 600, "tracking": 0.04 },
+      "mono-md": { "size": 13, "line": 21, "weight": 400, "tracking": 0, "mono": true },
+      "mono-lg": { "size": 15, "line": 24, "weight": 400, "tracking": 0, "mono": true }
+    }
+  },
+
+  "space": {
+    "$comment": "4px base grid. Nothing in the system should introduce a value that is not a multiple of 4.",
+    "none": 0,
+    "2xs": 2,
+    "xs": 4,
+    "sm": 8,
+    "md": 12,
+    "lg": 16,
+    "xl": 20,
+    "2xl": 24,
+    "3xl": 32,
+    "4xl": 40,
+    "5xl": 48,
+    "6xl": 64,
+    "7xl": 80,
+    "8xl": 96
+  },
+
+  "radii": {
+    "$comment": "§7.1 specifies ~34px on panels. That is the signature value — everything else scales down from it.",
+    "none": 0,
+    "xs": 6,
+    "sm": 10,
+    "md": 14,
+    "lg": 20,
+    "xl": 28,
+    "panel": 34,
+    "pill": 999
+  },
+
+  "motion": {
+    "$comment": "Two families: `quick` for anything under the user's finger, `standard`/`emphasized` for things that move on their own. The spring curve is reserved for the glass material — it gives panels a small settle instead of a hard stop.",
+    "curve": {
+      "linear": [0, 0, 1, 1],
+      "quick-out": [0.22, 1, 0.36, 1],
+      "standard": [0.2, 0, 0, 1],
+      "emphasized": [0.3, 0, 0, 1],
+      "spring": [0.34, 1.4, 0.64, 1]
+    },
+    "duration": {
+      "instant": 0,
+      "quick": 120,
+      "standard": 200,
+      "emphasized": 300,
+      "slow": 420,
+      "deliberate": 600
+    }
+  },
+
+  "glass": {
+    "$comment": "§7.1: 'Translucent panels with heavy background blur, boosted saturation, bright inner top edges and large rounded corners.' This is the one material in the system, so it is specified once and referenced by every surface that uses it. blur and saturation are compositor values (KWin / wlr-layer-shell), saturation is a CSS-style multiplier.",
+    "blur": 40,
+    "saturation": 1.8,
+    "variants": {
+      "panel": { "blur": 40, "radius": 34, "edgeWidth": 1, "edgeOpacity": 0.9 },
+      "dock": { "blur": 32, "radius": 34, "edgeWidth": 1, "edgeOpacity": 0.85 },
+      "launcher": { "blur": 44, "radius": 34, "edgeWidth": 1, "edgeOpacity": 0.95 },
+      "popover": { "blur": 28, "radius": 20, "edgeWidth": 1, "edgeOpacity": 0.7 },
+      "status-pill": { "blur": 24, "radius": 999, "edgeWidth": 1, "edgeOpacity": 0.6 }
+    }
+  },
+
+  "elevation": {
+    "$comment": "Shadows are the fallback for surfaces that cannot blur (reduced transparency, or a compositor that refuses). Kept subtle on purpose — the material, not the shadow, should read.",
+    "level1": { "y": 1, "blur": 2, "spread": 0, "opacity": 0.06 },
+    "level2": { "y": 4, "blur": 12, "spread": -2, "opacity": 0.10 },
+    "level3": { "y": 12, "blur": 32, "spread": -4, "opacity": 0.14 },
+    "level4": { "y": 24, "blur": 56, "spread": -8, "opacity": 0.18 }
+  },
+
+  "contrast": {
+    "$comment": "Pairs the generator asserts on every build. If a token change breaks one of these, the build fails rather than shipping an unreadable theme.",
+    "minimum": 4.5,
+    "largeTextMinimum": 3.0,
+    "pairs": [
+      { "light": ["fg-default", "bg-canvas"], "min": 4.5 },
+      { "light": ["fg-muted", "bg-canvas"], "min": 4.5 },
+      { "light": ["fg-subtle", "bg-canvas"], "min": 4.5 },
+      { "light": ["fg-default", "bg-surface"], "min": 4.5 },
+      { "light": ["fg-muted", "bg-surface"], "min": 4.5 },
+      { "light": ["fg-on-accent", "accent-default"], "min": 4.5 },
+      { "dark": ["fg-default", "bg-canvas"], "min": 4.5 },
+      { "dark": ["fg-muted", "bg-canvas"], "min": 4.5 },
+      { "dark": ["fg-subtle", "bg-canvas"], "min": 4.5 },
+      { "dark": ["fg-default", "bg-surface"], "min": 4.5 },
+      { "dark": ["fg-muted", "bg-surface"], "min": 4.5 },
+      { "dark": ["fg-on-accent", "accent-default"], "min": 4.5 }
+    ]
+  }
+}
