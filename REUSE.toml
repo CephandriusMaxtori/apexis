@@ -1,0 +1,48 @@
+# SPDX-FileCopyrightText: 2026 Apexis Project contributors
+#
+# REUSE metadata for the Apexis repository.
+#
+# Apexis uses split licensing, and the design system is the reason:
+#
+#   design/  -> MPL-2.0. File-level copylet. Third-party apps can consume the
+#               tokens inside a work under any licence, which is what makes
+#               adoption of the Apexis visual language viable. Anyone who
+#               modifies the tokens publishes those changes back.
+#
+#   rest     -> GPL-2.0-or-later. Matches the kernel, keeps the project inside
+#               Fedora's approved licence list.
+#
+# Note that GPL-2.0 carries no express patent grant. MPL-2.0 does, which is why
+# the design system is MPL rather than GPL.
+#
+# No licence here grants trademark rights. "Apexis" and its logo need a
+# separate written trademark policy — see plan.md §3.1.
+#
+# REUSE specification: https://reuse.software/spec/
+
+version = 1
+SPDX-PackageName = "apexis"
+SPDX-PackageSupplier = "Apexis Project contributors"
+SPDX-PackageDownloadLocation = "https://github.com/CephandriusMaxtori/apexis"
+
+# Design system: tokens, generator, and all generated renderer output.
+[[annotations]]
+path = ["design/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Apexis Project contributors"
+SPDX-License-Identifier = "MPL-2.0"
+
+# Everything else in the repository: installer, packaging, compositor config,
+# first-party applications, and the project documentation.
+[[annotations]]
+path = ["**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Apexis Project contributors"
+SPDX-License-Identifier = "GPL-2.0-or-later"
+
+# Files under LICENSES/ are the licence definitions themselves and need no
+# annotation — the REUSE tool skips them by design.
+#
+# Bundled third-party typefaces carry their own licence: Geist is
+# SIL OFL-1.1, (c) 2023 Vercel in collaboration with basement.studio, and
+# upstream declares no Reserved Font Name.

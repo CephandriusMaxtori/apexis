@@ -12,7 +12,7 @@ Status: Draft · Derived from Design Doc v0.1 · Audience: developers and power 
 | Update model | Atomic, image-based (settled, inherited from Fedora) |
 | Day-one hardware | x86_64, UEFI, Secure Boot, NVMe, AMD/Intel Mesa graphics. NVIDIA best-effort, off the 1.0 tested list |
 | Release cadence | ISO per Fedora Atomic release + rolling `apexis-edge` channel |
-| Team / governance | Sustained team effort; licensing and trademark clearance now in scope |
+| Team / governance | Sustained team effort. Licensing settled — see §7.1 |
 
 ## 2. Performance targets (§8) with methodology
 
@@ -31,7 +31,16 @@ Status: Draft · Derived from Design Doc v0.1 · Audience: developers and power 
 
 ### 3.1 Trademark and licensing compliance
 
-Fedora is FOSS: *"Anyone may download, use, modify, and redistribute it without charge."* Only the **trademark** is restricted, and the restriction is satisfied by doing exactly what Apexis already plans to do — shipping under its own name. Required:
+**Licensing.** Split, and the design system is the reason:
+
+| Scope | Licence |
+|---|---|
+| `design/` — tokens, generator, generated output | **MPL-2.0** |
+| Everything else — installer, packaging, config, apps | **GPL-2.0-or-later** |
+
+MPL-2.0 is file-level copyleft: any app can consume the tokens without relicensing, which is what keeps third-party adoption of the Apexis visual language viable. Modifications to the tokens are published back, which serves Principle 3. Under GPL a single app wanting to match the look would be forced GPL — a real cost for no gain. MPL-2.0 also carries an express patent grant, which GPL-2.0 does not.
+
+**Trademark.** Fedora is FOSS: *"Anyone may download, use, modify, and redistribute it without charge."* Only the **trademark** is restricted, and the restriction is satisfied by doing exactly what Apexis already plans to do — shipping under its own name. Required:
 
 - **Remove all Fedora trademark imagery.** Drop `fedora-logos` from the image manifest and replace boot/splash/about assets. The Fedora EULA is explicit: *"If User modifies the Software, then User must replace all images containing the 'Fedora' trademark."*
 - **Never present Apexis as Fedora.** Not "Fedora Apexis", not an "edition of Fedora", not "contains Fedora". You may say **"a derivative of Fedora"** or **"built upon Fedora"**, provided you make clear Apexis *is not* Fedora and is not endorsed by Fedora or Red Hat.
@@ -74,6 +83,7 @@ Not cheaply reachable: material depth — boosted saturation behind blur, bright
 
 ## 7. Open items
 
+- **Trademark policy for "Apexis"** — no licence grants trademark rights. The name and logo need their own written usage policy, as Fedora has one, before any branding is published.
 - **NVIDIA policy detail** — how to handle driver installation/secure boot for best-effort NVIDIA users in the first ISO.
 - **App store branding** — confirm the storefront ships as "Apexis Software" with Flathub listed as an upstream source, per §3.1.
 
@@ -81,3 +91,4 @@ Not cheaply reachable: material depth — boosted saturation behind blur, bright
 
 - ~~Trademark approach~~ — closed. No permission needed; see §3.1.
 - ~~Geist font licensing~~ — closed. OFL-1.1, no Reserved Font Name, bundling cleared; see §3.1.
+- ~~Project licensing~~ — closed. MPL-2.0 for `design/`, GPL-2.0-or-later elsewhere; see §3.1.

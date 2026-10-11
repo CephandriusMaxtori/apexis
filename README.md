@@ -74,9 +74,6 @@ is removed from Apexis builds. Full obligations, and the marks belonging to GNOM
 Foundation (GNOME, GTK, Flatpak, Flathub) and KDE e.V., are documented in
 [`plan.md` §3.1](plan.md).
 
-Bundled typefaces: **Geist**, SIL Open Font License 1.1 (© 2023 Vercel, in
-collaboration with basement.studio). Upstream declares no Reserved Font Name.
-
 ## Contributing
 
 Not yet open for outside contributions — there is no contributor guide or code
@@ -85,7 +82,25 @@ watch the repository.
 
 ## Licence
 
-To be decided. Governance and licensing are recorded as in-scope work in
-[`plan.md` §1](plan.md), but no specific licence has been chosen yet — the
-question carried over from the design doc. The design tokens, the generator and
-everything in `design/dist/` are covered by whichever licence is adopted.
+Split licensing, and the design system is the reason:
+
+| Scope | Licence | Why |
+|---|---|---|
+| `design/` | **MPL-2.0** | File-level copyleft. Any app can consume these tokens without relicensing — which is what makes third-party adoption of the Apexis visual language viable. Modifications to the tokens are published back. |
+| Everything else | **GPL-2.0-or-later** | Matches the kernel, and keeps the project inside Fedora's approved licence list. |
+
+Why not one licence for both: under GPL, any app wanting to match Apexis' look
+would have to become GPL to use the tokens. That costs third-party adoption of
+the design language and buys nothing.
+
+MPL-2.0 also carries an express patent grant, which GPL-2.0 does not — relevant
+when shipping binaries, and consistent with the patent-clean position the Fedora
+base already gives us.
+
+Full texts in [`LICENSES/`](LICENSES), metadata in [`REUSE.toml`](REUSE.toml).
+
+**No licence grants trademark rights.** "Apexis" and its logo need a separate
+written trademark policy, as Fedora has one. See [`plan.md` §3.1](plan.md).
+
+Bundled typefaces: **Geist**, SIL Open Font License 1.1 (© 2023 Vercel, in
+collaboration with basement.studio). Upstream declares no Reserved Font Name.

@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# SPDX-FileCopyrightText: 2026 Apexis Project contributors
+# SPDX-License-Identifier: MPL-2.0
+
 """Resolve the Apexis token graph and emit every renderer format.
 
 The token file is the single source of truth. This script is the only thing

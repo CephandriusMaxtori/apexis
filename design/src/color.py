@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2026 Apexis Project contributors
+# SPDX-License-Identifier: MPL-2.0
+
 """Colour maths for the Apexis design system.
 
 Everything is authored in OKLCH because perceptual lightness is the axis we
