@@ -1,0 +1,31 @@
+# CoreOS Assembler build outputs
+/builds/
+/builds.json
+*.qcow2
+*.iso
+*.raw.xz
+*.tar.gz
+
+# COSA overrides (local build artifacts)
+/overrides/
+
+# VM images
+*.img
+*.vmdk
+
+# Signing keys — NEVER commit
+*.key
+*.pem
+*.crt
+osrelease.key
+osrelease.pub
+
+# Build logs
+*.log
+
+# Editor / OS cruft
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
